@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>CALC</title>
+    <script>
+        function calculate() {
+            const leftValue = document.getElementById('leftValue').value;
+            const operator = document.getElementById('operator').value;
+            const rightValue = document.getElementById('rightValue').value;
+
+            const leftNumber = parseInt(leftValue, 10);
+            const rightNumber = parseInt(rightValue, 10);
+
+            if (isNaN(leftNumber) || isNaN(rightNumber) || leftNumber < 0 || rightNumber < 0) {
+                alert('Error :(');
+                return;
+            }
+
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = leftNumber + rightNumber;
+                    break;
+                case '-':
+                    result = leftNumber - rightNumber;
+                    break;
+                case '*':
+                    result = leftNumber * rightNumber;
+                    break;
+                case '/':
+                    if (rightNumber === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = leftNumber / rightNumber;
+                    break;
+                case '%':
+                    if (rightNumber === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = leftNumber % rightNumber;
+                    break;
+                default:
+                    alert('Error :(');
+                    return;
+            }
+
+            alert(`ผลลัพธ์: ${result}`);
+            console.log(`ผลลัพธ์: ${result}`);
+        }
+
+        function periodicAlert() {
+            alert('Please, use me...');
+        }
+
+        setInterval(periodicAlert, 30000);
+    </script>
+</head>
+<body>
+    <h1>เครื่องคิดเลข</h1>
+    <form onsubmit="event.preventDefault(); calculate();">
+        <input type="number" id="leftValue" min="0" placeholder="ตัวเลขด้านซ้าย" required>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="rightValue" min="0" placeholder="ตัวเลขด้านขวา" required>
+        <input type="submit" value="Try me!">
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<style>
+    button {
+        background-color: #21588b;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #21588b;
+    }
+
+    #ft_list {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .task {
+        background-color: #ffffff;
+        border: 1px solid black;
+        margin: 5px 0;
+        padding: 10px;
+        display: block;
+        width: 200px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+</style>
+<body>
+
+    <button id="newTaskBtn">NEW</button>
+    <div id="ft_list"></div>
+
+    <script src="todo.js"></script>
+
+</body>
+</html>
